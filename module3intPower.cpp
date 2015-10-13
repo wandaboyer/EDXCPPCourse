@@ -21,6 +21,7 @@
 
 #include <cstdlib>
 #include <stdio.h>
+#include <iostream>
 
 using namespace std;
 
@@ -37,22 +38,29 @@ int intPower(int base, int exponent) {
 }
 
 void printOutput(int base, int exponent) {
-    printf("Result of taking %d^%d: %d\n", base, exponent, intPower(base, exponent));
+    printf("Result of taking %d^%d: %d.", base, exponent, intPower(base, exponent));
 }
 
-int main(int argc, char** argv) {
-    // For the examples given in the problem specification.
-    if (argc == 1) {
-        printOutput(2, 2);
-        printOutput(2, 8); 
-    }
-    else if ((argc > 3) || (argc == 2)) {
-        printf("Invalid number of arguments; requires exactly the base and exponent.");
-        return -1;
-    }
-    else {
-       printOutput(atoi(argv[1]), atoi(argv[2]));
-    }
-    return 0;
-}
+//int main(int argc, char** argv) {
+//    // Prompt user for input.
+//    if (argc == 1) {
+//        int base, exponent;
+//        
+//        printf("Please enter your base: ");
+//        cin >> base;
+//        
+//        printf("Please enter your exponent: ");
+//        cin >> exponent;
+//        
+//        printOutput(base, exponent);
+//    }
+//    else if ((argc > 3) || (argc == 2)) {
+//        printf("Invalid number of arguments; requires exactly the base and exponent.");
+//        return -1;
+//    }
+//    else {
+//       printOutput(atoi(argv[1]), atoi(argv[2]));
+//    }
+//    return 0;
+//}
 
