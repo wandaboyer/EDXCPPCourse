@@ -2,7 +2,7 @@
  * File:   module3.cpp
  * Author: wandaboyer
  * Email: wbkboyer@gmail.com
- *The scenario is that you have been asked to create a library of utility 
+ * The scenario is that you have been asked to create a library of utility 
  * functions that support mathematical functions. You will add this code to 
  * functions in the next module but for now, write code to complete the following:
  * Using a for loop, write code that will compute the result of an int raised 
@@ -20,14 +20,39 @@
  */
 
 #include <cstdlib>
+#include <stdio.h>
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int intPower(int base, int exponent) {
+    // base^0
+    int result = 1;
+    
+    // base^i = base^(i-1) * base
+    for (int i = 1; i <= exponent; i++) {
+        result *= base;
+    }
+    
+    return result;
+}
 
+void printOutput(int base, int exponent) {
+    printf("Result of taking %d^%d: %d\n", base, exponent, intPower(base, exponent));
+}
+
+int main(int argc, char** argv) {
+    // For the examples given in the problem specification.
+    if (argc == 1) {
+        printOutput(2, 2);
+        printOutput(2, 8); 
+    }
+    else if ((argc > 3) || (argc == 2)) {
+        printf("Invalid number of arguments; requires exactly the base and exponent.");
+        return -1;
+    }
+    else {
+       printOutput(atoi(argv[1]), atoi(argv[2]));
+    }
     return 0;
 }
 
