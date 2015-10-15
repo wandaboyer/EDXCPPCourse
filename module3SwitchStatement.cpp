@@ -30,28 +30,3 @@ void charComp (char choice) {
             break;
     }  
 }
-
-int main (int argc, char** argv) {
-    if (argc == 1) {
-        char choice;
-        
-        printf("Please enter your choice of character: ");
-        cin >> choice;
-        
-        charComp(choice);
-    }
-    else if (argc > 2) {
-        printf("Please type only one character to compare.");
-        return -1;
-    }
-    else {
-        if (sizeof(argv[1]) > 1) {
-            printf("Please enter a single character.");
-            return -1;
-        }
-        else {
-            charComp(argv[1][0]);
-        }
-    }
-    return 0;
-}
